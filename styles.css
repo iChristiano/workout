@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f9f9f9;
+}
+h1, h2 {
+    color: #2c3e50;
+}
+.main-header {
+    background-color: #D8F5DD;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+}
+.day-container {
+    margin-bottom: 20px;
+}
+.day-header {
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 0;
+    color: gray;
+}
+.day-header.checked {
+    color: white;
+    background-color: #50C878; /* Keep the green background color */
+}
+.day-checkbox {
+    pointer-events: none;
+}
+.workout-list {
+    background-color: #ffffff;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    margin: 0;
+}
+.options-list {
+    margin-top: 20px;
+}
+.options-list li {
+    margin-bottom: 10px;
+}
+.separator {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+/* Responsive styling for iPhone X */
+@media only screen and (max-width: 375px) {
+    body {
+        margin: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .day-header {
+        font-size: 18px;
+    }
+    ul {
+        padding-left: 10px;
+    }
+    li {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    button, label {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainingsplan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="main-header">Trainingsplan</h1>
+
+    <div class="day-container">
+        <div class="day-header" id="day1Header">
+            <label><input type="checkbox" id="day1Checkbox" class="day-checkbox"> Workout 1: Brust, Schultern und Trizeps</label>
+        </div>
+        <ul id="day1" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day1')"> Bankdrücken: 4 Sätze, 8-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day1')"> Schulterdrücken (Kurzhanteln): 4 Sätze, 8-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day1')"> Butterfly oder Fliegende: 3 Sätze, 10-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day1')"> Seitheben für die Schultern: 3 Sätze, 12-15 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day1')"> Trizeps-Dips: 3 Sätze, bis zur Erschöpfung</li>
+        </ul>
+    </div>
+
+    <div class="day-container">
+        <div class="day-header" id="day2Header">
+            <label><input type="checkbox" id="day2Checkbox" class="day-checkbox"> Workout 2: Beine und Bauch</label>
+        </div>
+        <ul id="day2" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day2')"> Kniebeugen: 4 Sätze, 8-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day2')"> Beinpresse: 4 Sätze, 10-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day2')"> Ausfallschritte (mit oder ohne Hanteln): 3 Sätze, 12-15 Wiederholungen pro Bein</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day2')"> Plank: 3 Durchgänge, jeweils 30-60 Sekunden</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day2')"> Crunches: 3 Sätze, 12-15 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day2')"> Hanging Leg Raises: 3 Sätze, 10-12 Wiederholungen</li>
+        </ul>
+    </div>
+
+    <div class="day-container">
+        <div class="day-header" id="day3Header">
+            <label><input type="checkbox" id="day3Checkbox" class="day-checkbox"> Workout 3: Rücken, Bizeps und Core</label>
+        </div>
+        <ul id="day3" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day3')"> Klimmzüge: 4 Sätze, bis zur Erschöpfung</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day3')"> Rudern mit Kurzhanteln: 4 Sätze, 8-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day3')"> Kreuzheben: 4 Sätze, 8-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day3')"> Bizepscurls: 3 Sätze, 10-12 Wiederholungen</li>
+            <li><input type="checkbox" onchange="updateDayCheckbox('day3')"> Seitliche Plank: 3 Durchgänge, jeweils 20-40 Sekunden pro Seite</li>
+        </ul>
+    </div>
+
+    <div class="day-container">
+        <div class="day-header" id="day4Header">
+            <label><input type="checkbox" id="day4Checkbox" class="day-checkbox"> Workout 4: Cardio I</label>
+        </div>
+        <ul id="day4" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day4')"> Cardio: 30 Minuten</li>
+        </ul>
+    </div>
+
+    <div class="day-container">
+        <div class="day-header" id="day5Header">
+            <label><input type="checkbox" id="day5Checkbox" class="day-checkbox"> Workout 5: Cardio II</label>
+        </div>
+        <ul id="day5" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day5')"> Cardio: 30 Minuten</li>
+        </ul>
+    </div>
+
+    <div class="day-container">
+        <div class="day-header" id="day6Header">
+            <label><input type="checkbox" id="day6Checkbox" class="day-checkbox"> Workout 6: Stretching I</label>
+        </div>
+        <ul id="day6" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day6')"> Stretching: 30 Minuten</li>
+        </ul>
+    </div>
+
+    <div class="day-container">
+        <div class="day-header" id="day7Header">
+            <label><input type="checkbox" id="day7Checkbox" class="day-checkbox"> Workout 7: Stretching II</label>
+        </div>
+        <ul id="day7" class="workout-list">
+            <li><input type="checkbox" onchange="updateDayCheckbox('day7')"> Stretching: 30 Minuten</li>
+        </ul>
+    </div>
+
+    <hr class="separator">
+
+    <ul class="options-list">
+        <li><button onclick="saveList()">Liste speichern</button></li>
+        <li><button onclick="loadList()">Liste laden</button></li>
+        <li><button onclick="downloadJSON()">Exportieren (JSON)</button></li>
+        <li>
+            <input type="file" id="fileInput" accept=".json" onchange="importJSON()">
+            <label for="fileInput" style="cursor: pointer;">Importieren (JSON)</label>
+        </li>
+        <li><button onclick="resetCheckboxes()">Checkboxen zurücksetzen</button></li>
+    </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
