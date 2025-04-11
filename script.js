@@ -51,7 +51,7 @@ function loadList() {
     if (json) {
         items = JSON.parse(json);
         updateList();
-        alert('Liste geladen!');
+        //alert('Liste geladen!');
     } else {
         alert('Keine gespeicherte Liste gefunden.');
     }
