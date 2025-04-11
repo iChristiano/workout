@@ -124,3 +124,7 @@ items.day7 = [
 ];
 
 updateList();
+
+window.onload = function() {
+    loadList();
+};
